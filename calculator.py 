@@ -1,0 +1,29 @@
+def calculator():
+    try:
+        a = float(input("Введите первое число: "))
+        b = float(input("Введите второе число: "))
+        op = input("Введите операцию (+, -, *, /): ").strip()
+
+        match op:
+            case "+":
+                result = a + b
+            case "-":
+                result = a - b
+            case "*":
+                result = a * b
+            case "/":
+                if b == 0:
+                    print("Ошибка: деление на ноль!")
+                    return
+                result = a / b
+            case _:
+                print("Неизвестная операция. Используйте +, -, *, /")
+                return
+
+        print(f"Результат: {result}")
+
+    except ValueError:
+        print("Ошибка: введите корректные числа.")
+
+if __name__ == "__main__":
+    calculator()
